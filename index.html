@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="jumbotron banner">
+        <h1 id="bannerHeading">Hudson River Derby</h1>
+        <h2>Match Day Projector</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Match Projections</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12" id="resultA">
+                                <img src="assets/images/nycfc_logo.png" height="100" width="100">
+                                <h3><span id="nycfcRes"></span>% chance of winning</h3>
+                            </div>
+                            <div class="col-md-12 col-xs-12" id="resultB">
+                                <br>
+                                <img src="assets/images/nyrb_logo.png" height="100" width="100">
+                                <h3><span id="nyrbRes"></span>% chance of winning</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcSection">
+                <h2>New York City FC Roster</h2>
+                <br>
+                <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppend">
+                    <!--<div class="form-group">
+                        <select id="plyrSelectA" class="form-control" name='players' onchange="showPlyrA(this.value)">
+                            <option value="">Select a player:</option>
+                            <option value="David Villa">David Villa</option>
+                            <option value="Rodney Wallace">Rodney Wallace</option>
+                            <option value="Thomas McNamara">Thomas McNamara</option>
+                            <option value="Jack Harrison">Jack Harrison</option>
+                            <option value="Khiry Shelton">Khiry Shelton</option>
+                            <option value="Andrea Pirlo">Andrea Pirlo</option>
+                            <option value="Maxi Moralez">Maxi Moralez</option>
+                            <option value="Alexander Ring">Alexander Ring</option>
+                            <option value="Mikey Lopez">Mikey Lopez</option>
+                            <option value="John Stertzer">John Stertzer</option>
+                            <option value="Yangel Herrera">Yangel Herrera</option>
+                            <option value="Maxime Chanot">Maxime Chanot</option>
+                            <option value="Alexander Callens">Alexander Callens</option>
+                            <option value="Ronald Matarrita">Ronald Matarrita</option>
+                            <option value="Jefferson Mena">Jefferson Mena</option>
+                            <option value="Frederic Brillant">Frederic Brillant</option>
+                            <option value="Ethan White">Ethan White</option>
+                            <option value="Ben Sweat">Ben Sweat</option>
+                            <option value="Sean Johnson">Sean Johnson</option>
+                            <option value="Erik Johansen">Erik Johansen</option>
+                            <option value="Andre Rawls">Andre Rawls</option>
+                        </select>
+                    </div>-->
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbSection">
+                <h2>New York Red Bull Roster</h2>
+                <br>
+                <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppendB">
+                    <!--<div class="form-group">
+                        <select id="plyrSelectB" class="form-control" name='playersB' onchange="showPlyrB(this.value)">
+                            <option value="">Select a player:</option>
+                            <option value="Bradley Wright-Phillips">Bradley Wright-Phillips</option>
+                            <option value="Mike Grella">Mike Grella</option>
+                            <option value="Anatole Abang">Anatole Abang</option>
+                            <option value="Brandon Allen">Brandon Allen</option>
+                            <option value="Alex Muyl">Alex Muyl</option>
+                            <option value="Sacha Kljestan">Sacha Kljestan</option>
+                            <option value="Gonzalo Veron">Gonzalo Veron</option>
+                            <option value="Daniel Royer">Daniel Royer</option>
+                            <option value="Felipe">Felipe</option>
+                            <option value="Sean Davis">Sean Davis</option>
+                            <option value="Damien Perrinelle">Damien Perrinelle</option>
+                            <option value="Aurelien Collin">Aurelien Collin</option>
+                            <option value="Kemar Lawrence">Kemar Lawrence</option>
+                            <option value="Gideon Baah">Gideon Baah</option>
+                            <option value="Connor Lade">Connor Lade</option>
+                            <option value="Sal Zizzo">Sal Zizzo</option>
+                            <option value="Luis Robles">Luis Robles</option>
+                            <option value="Ryan Meara">Ryan Meara</option>
+                        </select>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcStat">
+                <h3>Select a player to view stats</h3>
+                <img id="placeHolderImgA" src="assets/images/nycfc_logoBW.png" height='145' width='145'>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbStat">
+                <h3>Select a player to view stats</h3>
+                <img id="placeHolderImgB" src="assets/images/nyrb_logoBW.png" height='145' width='145'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcLine">
+                <h3><b>NYCFC Starting Eleven</b></h3>
+                <div class="col-md-6 col-md-offset-3 col-xs-12">
+                	<ul class="list-group">
+                	</ul>
+                </div>
+                <div class="col-md-6 col-md-offset-3 col-xs-12">
+                    <h4>Team Attack Rating</h4>
+                    <div class="progress progress-danger">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width:0%" id="attBarA">
+                        </div>
+                    </div>
+                    <h4>Team Defense Rating</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" role="progressbar" style="width:0%" id="defBarA">
+                        </div>
+                    </div>
+                    <h4>Team Creativity Rating</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" style="width:0%" id="creatBarA">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbLine">
+                <h3><b>NYRB Starting Eleven</b></h3>
+                <div class="col-md-6 col-md-offset-3 col-xs-12">
+                	<ul class="list-group">
+                	</ul>
+                </div>
+                <div class="col-md-6 col-md-offset-3 col-xs-12">
+                    <h4>Team Attack Rating</h4>
+                    <div class="progress progress-danger">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" style="width:0%" id="attBarB">
+                        </div>
+                    </div>
+                    <h4>Team Defense Rating</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" role="progressbar" style="width:0%" id="defBarB">
+                        </div>
+                    </div>
+                    <h4>Team Creativity Rating</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" style="width:0%" id="creatBarB">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12" id="calcRow">
+                <button class="btn btn-warning" id="calcBtn" data-toggle="modal" data-target="#myModal" onclick='calc()'; disabled>Calculate</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5 col-xs-12" id="insertFormA">
+            <br>
+            <h3><b>Add Player to Roster</b></h3>
+            <br>
+                <form action="dataInsertA.php" method="post">
+                	<div class="form-group">
+                        <input class="form-control" name="name" id="inputName" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="attack" id="inputAttack" placeholder="Attack Rating" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="defense" id="inputDefense" placeholder="Defense Rating" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="creator" id="inputCreate" placeholder="Creator Rating" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="image" id="inputImg" placeholder="Image URL" required>
+                    </div>
+                    <div class="form-group">
+                		<select name="table">
+                			<option value="nycfc">New York City FC</option>
+                			<option value="nyrb">New York Red Bull</option>
+                		</select>
+                	</div>	
+
+                    <div class="form-group">
+                        <select name="position">
+                        	<option value="Striker">Striker</option>
+                        	<option value="Left Winger">Left Winger</option>
+                        	<option value="Right Winger">Right Winger</option>
+                        	<option value="Central Attacking Midfielder">CAM</option>
+                        	<option value="Central Midfielder">Central Midfielder</option>
+                        	<option value="Left Midfielder">Left Midfielder</option>
+                        	<option value="Right Midfielder">Right Midfielder</option>
+  							<option value="Left Back">Left Back</option>
+  							<option value="Right Back">Right Back</option>
+  							<option value="Center Back">Center Back</option>
+  							<option value="Goal Keeper">Goal Keeper</option>
+                        </select>
+                    </div>
+                    <button type="submit" value="Submit" class="btn btn-success">Submit</button>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        
+        if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+        } else {
+                // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("selectAppend").innerHTML = this.responseText;
+            }
+        };
+        
+        xmlhttp.open("GET", "initial.php");
+        xmlhttp.send();
+
+        if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+        } else {
+                // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("selectAppendB").innerHTML = this.responseText;
+            }
+        };
+        
+        xmlhttp.open("GET", "initial2.php");
+        xmlhttp.send();
+	
+
+
+    var attRatingA = 0;
+    var defRatingA = 0;
+    var creatRatingA = 0;
+    var attRatingB = 0;
+    var defRatingB = 0;
+    var creatRatingB = 0;
+    var counterA = 11;
+    var counterB = 11;
+    var lineCountA = 0;
+    var lineCountB = 0;
+
+    function addA() {
+        var plyrNameA = $('#nameA').text();
+        var plyrAttA = $('#attackA').text();
+        var plyrDefA = $('#defenseA').text();
+        var plyrCreatA = $('#creativityA').text();
+
+        lineCountA++;
+        attRatingA = parseInt(attRatingA) + parseInt(plyrAttA);
+        defRatingA = parseInt(defRatingA) + parseInt(plyrDefA);
+        creatRatingA = parseInt(creatRatingA) + parseInt(plyrCreatA);
+
+        $('#nycfcLine ul').append('<li class="list-group-item">' + lineCountA + '.' + plyrNameA + '</li>');
+        $('#plyrSelectA option:selected').remove();
+        $('#nycfcStat').empty();
+        $('#nycfcStat').html('<h3>Select a player to view stats</h3><img id="placeHolderImgA" src="assets/images/nycfc_logoBW.png" height="145" width="145">');
+
+        $("#attBarA").css("width", attRatingA / 10 + "%").text(attRatingA);
+        $("#defBarA").css("width", defRatingA / 10 + "%").text(defRatingA);
+        $("#creatBarA").css("width", creatRatingA / 10 + "%").text(creatRatingA);
+
+        counterA--;
+        console.log(counterA);
+
+        if (counterA == 0) {
+            $('#plyrSelectA').attr('disabled', true);
+        }
+
+        if (counterA == 0 && counterB == 0) {
+        	$('#calcBtn').attr('disabled', false);
+
+        }
+
+    }
+
+    function addB() {
+        var plyrNameB = $('#nameB').text();
+        var plyrAttB = $('#attackB').text();
+        var plyrDefB = $('#defenseB').text();
+        var plyrCreatB = $('#creativityB').text();
+
+        lineCountB++;
+        attRatingB = parseInt(attRatingB) + parseInt(plyrAttB);
+        defRatingB = parseInt(defRatingB) + parseInt(plyrDefB);
+        creatRatingB = parseInt(creatRatingB) + parseInt(plyrCreatB);
+
+        $('#nyrbLine ul').append('<li class="list-group-item">' + lineCountB + '.' + plyrNameB + '</li>');
+        $('#plyrSelectB option:selected').remove();
+        $('#nyrbStat').empty();
+        $('#nyrbStat').html('<h3>Select a player to view stats</h3><img id="placeHolderImgB" src="assets/images/nyrb_logoBW.png" height="145" width="145">');
+
+        $("#attBarB").css("width", attRatingB / 10 + "%").text(attRatingB);
+        $("#defBarB").css("width", defRatingB / 10 + "%").text(defRatingB);
+        $("#creatBarB").css("width", creatRatingB / 10 + "%").text(creatRatingB);
+
+        counterB--;
+
+        if (counterB == 0) {
+            $('#plyrSelectB').attr('disabled', true);
+        }
+
+        if (counterA == 0 && counterB == 0) {
+        	$('#calcBtn').attr('disabled', false);
+
+        }
+
+    }
+
+    function calc() {
+        //nycfc ratings
+        var finalA = attRatingA - defRatingB + creatRatingA;
+        //nyrb ratings
+        var finalB = attRatingB - defRatingA + creatRatingB;
+        var first;
+        var second;
+        var round;
+        var subFigure;
+        var nycfcWin;
+        var nyrbWin;
+
+        if (finalB < finalA) {
+            first = finalB;
+            second = finalA;
+        }
+
+        if (finalA < finalB) {
+            first = finalA;
+            second = finalB;
+        }
+
+        if (finalA == finalB) {
+            first = finalA;
+            second = finalB;
+        }
+
+        round = Math.round((first / second) * 100);
+        console.log(round);
+
+        subFigure = 100 - round;
+
+        if (finalA > finalB) {
+            nycfcWin = 50 + parseInt(subFigure);
+            nyrbWin = 50 - parseInt(subFigure);
+            console.log('Nycfc chance: ' + nycfcWin + '%');
+            console.log('Nyrb chance: ' + nyrbWin + '%');
+            $('#nycfcRes').html(nycfcWin);
+            $('#nyrbRes').html(nyrbWin);
+        }
+
+        if (finalB > finalA) {
+            nycfcWin = 50 - parseInt(subFigure);
+            nyrbWin = 50 + parseInt(subFigure);
+            console.log('Nycfc chance: ' + nycfcWin + '%');
+            console.log('Nyrb chance: ' + nyrbWin + '%');
+        }
+
+
+    }
+
+    function showPlyrA(str) {
+        if (str == "") {
+            document.getElementById("nycfcStat").innerHTML = "<h3>Select a player to view stats</h3><img id='placeHolderImgA' src='assets/images/nycfc_logoBW.png' height='145' width='145'>";
+            return;
+        } else {
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("nycfcStat").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "dataConnect.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    }
+
+    function showPlyrB(str) {
+        if (str == "") {
+            document.getElementById("nyrbStat").innerHTML = "<h3>Select a player to view stats</h3><img id='placeHolderImgB' src='assets/images/nyrb_logoBW.png' height='145' width='145'>";
+            return;
+        } else {
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("nyrbStat").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "dataConnect.php?r=" + str, true);
+            xmlhttp.send();
+        }
+    }
+    </script>
+</body>
+
+</html>

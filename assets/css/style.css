@@ -1,0 +1,55 @@
+html {
+	height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+.banner {
+	height: 50vh;
+    background: #000 url("../images/nyjumbo3.jpeg") no-repeat center center;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    text-align: center;
+    color: #FFF; // change text color
+  
+}
+
+#bannerHeading {
+	margin-top: 15vh;
+}
+
+#nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #resultA, #resultB, #insertFormA {
+	text-align: center;
+}
+
+#placeHolderImgA, #placeHolderImgB {
+	margin: 5vh 0 5vh 0;
+}
+
+
+@media only screen and (max-width: 500px) {
+
+	.banner {
+		height: 30vh;
+	}
+
+	#bannerHeading {
+	margin-top: 0;
+	}
+
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+	.banner {
+		height: 30vh;
+	}
+
+}
