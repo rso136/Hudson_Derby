@@ -5,7 +5,13 @@ html {
 body {
   position: relative;
   min-height: 100%;
+  padding-bottom: 8rem;
+  font-family: 'Raleway', sans-serif;
 }
+
+/*.container-fluid {
+	margin-bottom: 5vh;
+}*/
 
 .banner {
 	height: 50vh;
@@ -21,16 +27,124 @@ body {
 
 #bannerHeading {
 	margin-top: 15vh;
+	font-family: 'Revalia', cursive;
 }
 
-#nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #resultA, #resultB, #insertFormA {
+#nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #calcRowAlert, #resultA, #resultB, #insertFormA {
 	text-align: center;
+}
+
+#calcRowAlert {
+	color: #e50d2a;
+}
+
+.btn-customA {
+	background-color: #7fbbe2;
+	color: #fff;
+	border-radius: 0;
+}
+
+.btn-customA:hover {
+	background-color: #7fbbe2;
+	color: #fff;
+}
+
+.btn-customA:visted {
+	background-color: #7fbbe2;
+	color: #fff;
+}
+
+.btn-customA:active {
+	background-color: #7fbbe2;
+	color: #fff;
+}
+
+.btn-customB {
+	background-color: #e50d2a;
+	color: #fff;
+	border-radius: 0;
+}
+
+.btn-customB:hover {
+	background-color: #e50d2a;
+	color: #fff;
+}
+
+.btn-customB:visited {
+	background-color: #e50d2a;
+	color: #fff;
+}
+
+.btn-customB:active {
+	background-color: #e50d2a;
+	color: #fff;
+}
+
+.btn-customC {
+	background-color: #000000;
+	color: #fff;
+	border-radius: 0;
+}
+
+.btn-customC:hover {
+	background-color: #000000;
+	color: #fff;
+}
+
+.btn-customC:visted {
+	background-color: #000000;
+	color: #fff;
+}
+
+.btn-customC:active {
+	background-color: #000000;
+	color: #fff;
+}
+
+.btn-customD {
+	background-color: #000000;
+	color: #fff;
+	border-radius: 0;
+	margin-bottom: 5vh;
+}
+
+.btn-customD:hover {
+	background-color: #000000;
+	color: #fff;
+}
+
+.btn-customD:visited {
+	background-color: #000000;
+	color: #fff;	
+}
+
+.btn-customD:active {
+	background-color: #000000;
+	color: #fff;	
 }
 
 #placeHolderImgA, #placeHolderImgB {
 	margin: 5vh 0 5vh 0;
 }
 
+#mobileHR {
+	visibility: hidden;
+}
+
+#footer {	
+  height: 75px;
+  background-color: #1c1c1c;
+  text-align: center;
+  color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#copyright {
+  margin-top: 25px;
+}
 
 @media only screen and (max-width: 500px) {
 
@@ -42,6 +156,18 @@ body {
 	margin-top: 0;
 	}
 
+	.btn-customA {
+		margin-bottom: 2.5vh;
+	}
+
+	.btn-customB {
+		margin-bottom: 2.5vh;
+	}
+
+	#mobileHR {
+		visibility: visible;
+	}
+
 }
 
 @media only screen 
@@ -50,6 +176,10 @@ and (max-device-width : 1024px) {
 
 	.banner {
 		height: 30vh;
+	}
+
+	#bannerHeading {
+	margin-top: 0;
 	}
 
 }

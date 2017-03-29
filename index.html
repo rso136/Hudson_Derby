@@ -2,9 +2,13 @@
 <html>
 
 <head>
+
+    <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Revalia" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/hover.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -12,7 +16,7 @@
 <body>
     <div class="jumbotron banner">
         <h1 id="bannerHeading">Hudson River Derby</h1>
-        <h2>Match Day Projector</h2>
+        <h2>Match Day Projection</h2>
     </div>
     <div class="container-fluid">
         <div class="modal fade" id="myModal" role="dialog">
@@ -36,14 +40,14 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <a type="button" class="btn btn-customD" data-dismiss="modal">Close</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcSection">
-                <h2>New York City FC Roster</h2>
+                <h2><b>NEW YORK CITY FC</b></h2>
                 <br>
                 <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppend">
                     <!--<div class="form-group">
@@ -75,7 +79,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbSection">
-                <h2>New York Red Bull Roster</h2>
+                <h2><b>NEW YORK RED BULL</b></h2>
                 <br>
                 <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppendB">
                     <!--<div class="form-group">
@@ -118,8 +122,8 @@
             <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcLine">
                 <h3><b>NYCFC Starting Eleven</b></h3>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
-                	<ul class="list-group">
-                	</ul>
+                    <ul class="list-group">
+                    </ul>
                 </div>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
                     <h4>Team Attack Rating</h4>
@@ -142,8 +146,8 @@
             <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbLine">
                 <h3><b>NYRB Starting Eleven</b></h3>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
-                	<ul class="list-group">
-                	</ul>
+                    <ul class="list-group">
+                    </ul>
                 </div>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
                     <h4>Team Attack Rating</h4>
@@ -166,56 +170,61 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-xs-12" id="calcRow">
-                <button class="btn btn-warning" id="calcBtn" data-toggle="modal" data-target="#myModal" onclick='calc()'; disabled>Calculate</button>
+                <a class="btn btn-customC btn-lg" id="calcBtn">CALCULATE</a>
+                <div id="calcRowAlert">
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2 col-md-offset-5 col-xs-12" id="insertFormA">
+            <div class="col-md-2 col-md-offset-5 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2" id="insertFormA">
             <br>
             <h3><b>Add Player to Roster</b></h3>
             <br>
                 <form action="dataInsertA.php" method="post">
-                	<div class="form-group">
+                    <div class="form-group">
                         <input class="form-control" name="name" id="inputName" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="attack" id="inputAttack" placeholder="Attack Rating" required>
+                        <input type="number" min="0" max="100" class="form-control" name="attack" id="inputAttack" placeholder="Attack Rating" required>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="defense" id="inputDefense" placeholder="Defense Rating" required>
+                        <input type="number" min="0" max="100" class="form-control" name="defense" id="inputDefense" placeholder="Defense Rating" required>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="creator" id="inputCreate" placeholder="Creator Rating" required>
+                        <input type="number" min="0" max="100" class="form-control" name="creator" id="inputCreate" placeholder="Creator Rating" required>
                     </div>
                     <div class="form-group">
                         <input class="form-control" name="image" id="inputImg" placeholder="Image URL" required>
                     </div>
                     <div class="form-group">
-                		<select name="table">
-                			<option value="nycfc">New York City FC</option>
-                			<option value="nyrb">New York Red Bull</option>
-                		</select>
-                	</div>	
+                        <select class='form-control' name="table">
+                            <option value="nycfc">New York City FC</option>
+                            <option value="nyrb">New York Red Bull</option>
+                        </select>
+                    </div>  
 
                     <div class="form-group">
-                        <select name="position">
-                        	<option value="Striker">Striker</option>
-                        	<option value="Left Winger">Left Winger</option>
-                        	<option value="Right Winger">Right Winger</option>
-                        	<option value="Central Attacking Midfielder">CAM</option>
-                        	<option value="Central Midfielder">Central Midfielder</option>
-                        	<option value="Left Midfielder">Left Midfielder</option>
-                        	<option value="Right Midfielder">Right Midfielder</option>
-  							<option value="Left Back">Left Back</option>
-  							<option value="Right Back">Right Back</option>
-  							<option value="Center Back">Center Back</option>
-  							<option value="Goal Keeper">Goal Keeper</option>
+                        <select class='form-control' name="position">
+                            <option value="Striker">Striker</option>
+                            <option value="Left Winger">Left Winger</option>
+                            <option value="Right Winger">Right Winger</option>
+                            <option value="Central Attacking Midfielder">CAM</option>
+                            <option value="Central Midfielder">Central Midfielder</option>
+                            <option value="Left Midfielder">Left Midfielder</option>
+                            <option value="Right Midfielder">Right Midfielder</option>
+                            <option value="Left Back">Left Back</option>
+                            <option value="Right Back">Right Back</option>
+                            <option value="Center Back">Center Back</option>
+                            <option value="Goal Keeper">Goal Keeper</option>
                         </select>
                     </div>
-                    <button type="submit" value="Submit" class="btn btn-success">Submit</button>
-                    <br>
-                    <br>
+                    <button type="submit" value="Submit" class="btn btn-customD">SUBMIT</button>
                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div id="footer" class="col-md-12 col-xs-12">
+                <p id="copyright"><b>© Richard Oh</b></p>
             </div>
         </div>
     </div>
@@ -253,8 +262,6 @@
         
         xmlhttp.open("GET", "initial2.php");
         xmlhttp.send();
-	
-
 
     var attRatingA = 0;
     var defRatingA = 0;
@@ -272,13 +279,14 @@
         var plyrAttA = $('#attackA').text();
         var plyrDefA = $('#defenseA').text();
         var plyrCreatA = $('#creativityA').text();
+        var plyrImgA = $('#plyrImgA').attr('src');
 
         lineCountA++;
         attRatingA = parseInt(attRatingA) + parseInt(plyrAttA);
         defRatingA = parseInt(defRatingA) + parseInt(plyrDefA);
         creatRatingA = parseInt(creatRatingA) + parseInt(plyrCreatA);
 
-        $('#nycfcLine ul').append('<li class="list-group-item">' + lineCountA + '.' + plyrNameA + '</li>');
+        $('#nycfcLine ul').append('<li class="list-group-item"><b>' + lineCountA + '.' + plyrNameA + " - " + '<img class="img-circle" src=' + "'" + plyrImgA + "' height='30' width='30'>" + '</b></li>');
         $('#plyrSelectA option:selected').remove();
         $('#nycfcStat').empty();
         $('#nycfcStat').html('<h3>Select a player to view stats</h3><img id="placeHolderImgA" src="assets/images/nycfc_logoBW.png" height="145" width="145">');
@@ -295,7 +303,7 @@
         }
 
         if (counterA == 0 && counterB == 0) {
-        	$('#calcBtn').attr('disabled', false);
+            $('#calcBtn').attr('disabled', false);
 
         }
 
@@ -306,13 +314,15 @@
         var plyrAttB = $('#attackB').text();
         var plyrDefB = $('#defenseB').text();
         var plyrCreatB = $('#creativityB').text();
+        var plyrImgB = $('#plyrImgB').attr('src');
+
 
         lineCountB++;
         attRatingB = parseInt(attRatingB) + parseInt(plyrAttB);
         defRatingB = parseInt(defRatingB) + parseInt(plyrDefB);
         creatRatingB = parseInt(creatRatingB) + parseInt(plyrCreatB);
 
-        $('#nyrbLine ul').append('<li class="list-group-item">' + lineCountB + '.' + plyrNameB + '</li>');
+        $('#nyrbLine ul').append('<li class="list-group-item"><b>' + lineCountB + '.' + plyrNameB + " - " + '<img class="img-circle" src=' + "'" + plyrImgB + "' height='30' width='30'>" + '</b></li>');
         $('#plyrSelectB option:selected').remove();
         $('#nyrbStat').empty();
         $('#nyrbStat').html('<h3>Select a player to view stats</h3><img id="placeHolderImgB" src="assets/images/nyrb_logoBW.png" height="145" width="145">');
@@ -328,13 +338,28 @@
         }
 
         if (counterA == 0 && counterB == 0) {
-        	$('#calcBtn').attr('disabled', false);
+            $('#calcBtn').attr('disabled', false);
 
         }
 
     }
 
+    $('#calcBtn').on('click', function() {
+        if (counterA > 0 || counterB > 0) {
+            $('#calcRowAlert').html('<h4>Full starting eleven lineups required for projection calculation</h4>');
+        }
+
+        if (counterA == 0 && counterB == 0) {
+
+            $('#calcBtn').attr({"data-toggle": "modal", "data-target": "#myModal"});
+
+            calc();
+        }
+    });
+
     function calc() {
+
+        $('#calcRowAlert').empty();
         //nycfc ratings
         var finalA = attRatingA - defRatingB + creatRatingA;
         //nyrb ratings
@@ -380,6 +405,15 @@
             nyrbWin = 50 + parseInt(subFigure);
             console.log('Nycfc chance: ' + nycfcWin + '%');
             console.log('Nyrb chance: ' + nyrbWin + '%');
+            $('#nycfcRes').html(nycfcWin);
+            $('#nyrbRes').html(nyrbWin);
+        }
+
+        if (finalA == finalB) {
+            nycfcWin = 50;
+            nyrvWin = 50;
+            $('#nycfcRes').html(nycfcWin);
+            $('#nyrbRes').html(nyrbWin);
         }
 
 
