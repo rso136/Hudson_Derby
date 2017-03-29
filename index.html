@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -50,71 +49,24 @@
                 <h2><b>NEW YORK CITY FC</b></h2>
                 <br>
                 <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppend">
-                    <!--<div class="form-group">
-                        <select id="plyrSelectA" class="form-control" name='players' onchange="showPlyrA(this.value)">
-                            <option value="">Select a player:</option>
-                            <option value="David Villa">David Villa</option>
-                            <option value="Rodney Wallace">Rodney Wallace</option>
-                            <option value="Thomas McNamara">Thomas McNamara</option>
-                            <option value="Jack Harrison">Jack Harrison</option>
-                            <option value="Khiry Shelton">Khiry Shelton</option>
-                            <option value="Andrea Pirlo">Andrea Pirlo</option>
-                            <option value="Maxi Moralez">Maxi Moralez</option>
-                            <option value="Alexander Ring">Alexander Ring</option>
-                            <option value="Mikey Lopez">Mikey Lopez</option>
-                            <option value="John Stertzer">John Stertzer</option>
-                            <option value="Yangel Herrera">Yangel Herrera</option>
-                            <option value="Maxime Chanot">Maxime Chanot</option>
-                            <option value="Alexander Callens">Alexander Callens</option>
-                            <option value="Ronald Matarrita">Ronald Matarrita</option>
-                            <option value="Jefferson Mena">Jefferson Mena</option>
-                            <option value="Frederic Brillant">Frederic Brillant</option>
-                            <option value="Ethan White">Ethan White</option>
-                            <option value="Ben Sweat">Ben Sweat</option>
-                            <option value="Sean Johnson">Sean Johnson</option>
-                            <option value="Erik Johansen">Erik Johansen</option>
-                            <option value="Andre Rawls">Andre Rawls</option>
-                        </select>
-                    </div>-->
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbSection">
                 <h2><b>NEW YORK RED BULL</b></h2>
                 <br>
                 <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppendB">
-                    <!--<div class="form-group">
-                        <select id="plyrSelectB" class="form-control" name='playersB' onchange="showPlyrB(this.value)">
-                            <option value="">Select a player:</option>
-                            <option value="Bradley Wright-Phillips">Bradley Wright-Phillips</option>
-                            <option value="Mike Grella">Mike Grella</option>
-                            <option value="Anatole Abang">Anatole Abang</option>
-                            <option value="Brandon Allen">Brandon Allen</option>
-                            <option value="Alex Muyl">Alex Muyl</option>
-                            <option value="Sacha Kljestan">Sacha Kljestan</option>
-                            <option value="Gonzalo Veron">Gonzalo Veron</option>
-                            <option value="Daniel Royer">Daniel Royer</option>
-                            <option value="Felipe">Felipe</option>
-                            <option value="Sean Davis">Sean Davis</option>
-                            <option value="Damien Perrinelle">Damien Perrinelle</option>
-                            <option value="Aurelien Collin">Aurelien Collin</option>
-                            <option value="Kemar Lawrence">Kemar Lawrence</option>
-                            <option value="Gideon Baah">Gideon Baah</option>
-                            <option value="Connor Lade">Connor Lade</option>
-                            <option value="Sal Zizzo">Sal Zizzo</option>
-                            <option value="Luis Robles">Luis Robles</option>
-                            <option value="Ryan Meara">Ryan Meara</option>
-                        </select>
-                    </div>-->
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcStat">
                 <h3>Select a player to view stats</h3>
+                <p><sup>*All player stats based on <a href='http://www.futhead.com/' target='_blank'>EA Fifa 17 Ultimate Team data.</a></sup></p>
                 <img id="placeHolderImgA" src="assets/images/nycfc_logoBW.png" height='145' width='145'>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbStat">
                 <h3>Select a player to view stats</h3>
+                <p><sup>*All player stats based on <a href='http://www.futhead.com/' target='_blank'>EA Fifa 17 Ultimate Team data.</a></sup></p>
                 <img id="placeHolderImgB" src="assets/images/nyrb_logoBW.png" height='145' width='145'>
             </div>
         </div>
@@ -177,9 +129,9 @@
         </div>
         <div class="row">
             <div class="col-md-2 col-md-offset-5 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2" id="insertFormA">
-            <br>
-            <h3><b>Add Player to Roster</b></h3>
-            <br>
+                <br>
+                <h3><b>Add Player to Roster</b></h3>
+                <br>
                 <form action="dataInsertA.php" method="post">
                     <div class="form-group">
                         <input class="form-control" name="name" id="inputName" placeholder="Name" required>
@@ -201,8 +153,7 @@
                             <option value="nycfc">New York City FC</option>
                             <option value="nyrb">New York Red Bull</option>
                         </select>
-                    </div>  
-
+                    </div>
                     <div class="form-group">
                         <select class='form-control' name="position">
                             <option value="Striker">Striker</option>
@@ -229,39 +180,37 @@
         </div>
     </div>
     <script>
-
-        
-        if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
-        } else {
-                // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-          }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("selectAppend").innerHTML = this.responseText;
-            }
-        };
-        
-        xmlhttp.open("GET", "initial.php");
-        xmlhttp.send();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("selectAppend").innerHTML = this.responseText;
+        }
+    };
 
-        if (window.XMLHttpRequest) {
-                // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp.open("GET", "initial.php");
+    xmlhttp.send();
+
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
-        } else {
-                // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-          }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("selectAppendB").innerHTML = this.responseText;
-            }
-        };
-        
-        xmlhttp.open("GET", "initial2.php");
-        xmlhttp.send();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("selectAppendB").innerHTML = this.responseText;
+        }
+    };
+
+    xmlhttp.open("GET", "initial2.php");
+    xmlhttp.send();
 
     var attRatingA = 0;
     var defRatingA = 0;
@@ -351,7 +300,10 @@
 
         if (counterA == 0 && counterB == 0) {
 
-            $('#calcBtn').attr({"data-toggle": "modal", "data-target": "#myModal"});
+            $('#calcBtn').attr({
+                "data-toggle": "modal",
+                "data-target": "#myModal"
+            });
 
             calc();
         }
