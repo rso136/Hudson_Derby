@@ -131,6 +131,10 @@ body {
 	margin: 5vh 0 5vh 0;
 }
 
+#positionA, #positionB {
+	text-transform: uppercase;
+}
+
 #mobileHR {
 	visibility: hidden;
 }
