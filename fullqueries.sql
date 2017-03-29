@@ -1,6 +1,3 @@
-CREATE DATABASE nycfc_db;
-USE nycfc_db;
-
 CREATE TABLE nycfc
 (
     id int NOT NULL AUTO_INCREMENT,

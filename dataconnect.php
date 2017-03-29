@@ -9,10 +9,11 @@
 $q = $_GET['q'];
 $r = $_GET['r'];
 
-$servername = "localhost";
-$username = "root";
-$password = "orangegit12";
-$dbname = "nycfc_db";
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$servername = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$dbname = substr($url["path"], 1);
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
