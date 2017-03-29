@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-</head>
-
 <?php
 
 $q = $_GET['q'];
@@ -59,12 +53,3 @@ if ($resultB->num_rows > 0) {
 
 $conn->close();
 ?>
-
-<script>
-
-
-
-</script>
-
-</body>
-</html>
