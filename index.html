@@ -2,11 +2,12 @@
 <html>
 
 <head>
+
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Revalia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Revalia|Roboto+Slab|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/assets/css/hover.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +24,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">MATCH PROJECTION</h4>
+                        <h4 class="modal-title">Match Projections</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -39,22 +40,71 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a type="button" class="btn btn-customD" data-dismiss="modal">EXIT</a>
+                        <a type="button" class="btn btn-customD" data-dismiss="modal">Close</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcSection">
-                <h2><b>NEW YORK CITY FC</b></h2>
+                <h2 id="nycfcHeading"><i><b>NEW YORK CITY FC</b></i></h2>
                 <br>
                 <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppend">
+                    <!--<div class="form-group">
+                        <select id="plyrSelectA" class="form-control" name='players' onchange="showPlyrA(this.value)">
+                            <option value="">Select a player:</option>
+                            <option value="David Villa">David Villa</option>
+                            <option value="Rodney Wallace">Rodney Wallace</option>
+                            <option value="Thomas McNamara">Thomas McNamara</option>
+                            <option value="Jack Harrison">Jack Harrison</option>
+                            <option value="Khiry Shelton">Khiry Shelton</option>
+                            <option value="Andrea Pirlo">Andrea Pirlo</option>
+                            <option value="Maxi Moralez">Maxi Moralez</option>
+                            <option value="Alexander Ring">Alexander Ring</option>
+                            <option value="Mikey Lopez">Mikey Lopez</option>
+                            <option value="John Stertzer">John Stertzer</option>
+                            <option value="Yangel Herrera">Yangel Herrera</option>
+                            <option value="Maxime Chanot">Maxime Chanot</option>
+                            <option value="Alexander Callens">Alexander Callens</option>
+                            <option value="Ronald Matarrita">Ronald Matarrita</option>
+                            <option value="Jefferson Mena">Jefferson Mena</option>
+                            <option value="Frederic Brillant">Frederic Brillant</option>
+                            <option value="Ethan White">Ethan White</option>
+                            <option value="Ben Sweat">Ben Sweat</option>
+                            <option value="Sean Johnson">Sean Johnson</option>
+                            <option value="Erik Johansen">Erik Johansen</option>
+                            <option value="Andre Rawls">Andre Rawls</option>
+                        </select>
+                    </div>-->
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbSection">
-                <h2><b>NEW YORK RED BULL</b></h2>
+                <h2 id="nyrbHeading"><i><b>NEW YORK RED BULL</b></i></h2>
                 <br>
                 <div class="col-md-6 col-md-offset-3 col-xs-12" id="selectAppendB">
+                    <!--<div class="form-group">
+                        <select id="plyrSelectB" class="form-control" name='playersB' onchange="showPlyrB(this.value)">
+                            <option value="">Select a player:</option>
+                            <option value="Bradley Wright-Phillips">Bradley Wright-Phillips</option>
+                            <option value="Mike Grella">Mike Grella</option>
+                            <option value="Anatole Abang">Anatole Abang</option>
+                            <option value="Brandon Allen">Brandon Allen</option>
+                            <option value="Alex Muyl">Alex Muyl</option>
+                            <option value="Sacha Kljestan">Sacha Kljestan</option>
+                            <option value="Gonzalo Veron">Gonzalo Veron</option>
+                            <option value="Daniel Royer">Daniel Royer</option>
+                            <option value="Felipe">Felipe</option>
+                            <option value="Sean Davis">Sean Davis</option>
+                            <option value="Damien Perrinelle">Damien Perrinelle</option>
+                            <option value="Aurelien Collin">Aurelien Collin</option>
+                            <option value="Kemar Lawrence">Kemar Lawrence</option>
+                            <option value="Gideon Baah">Gideon Baah</option>
+                            <option value="Connor Lade">Connor Lade</option>
+                            <option value="Sal Zizzo">Sal Zizzo</option>
+                            <option value="Luis Robles">Luis Robles</option>
+                            <option value="Ryan Meara">Ryan Meara</option>
+                        </select>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -72,10 +122,10 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12" id="nycfcLine">
-                <h3><b>NYCFC Starting Eleven</b></h3>
+                <h3 id="nycfcSubHeading"><b>NYCFC Starting Eleven</b></h3>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
-                    <ul class="list-group">
-                    </ul>
+                	<ul class="list-group">
+                	</ul>
                 </div>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
                     <h4>Team Attack Rating</h4>
@@ -96,10 +146,10 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12" id="nyrbLine">
-                <h3><b>NYRB Starting Eleven</b></h3>
+                <h3 id="nyrbSubHeading"><b>NYRB Starting Eleven</b></h3>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
-                    <ul class="list-group">
-                    </ul>
+                	<ul class="list-group">
+                	</ul>
                 </div>
                 <div class="col-md-6 col-md-offset-3 col-xs-12">
                     <h4>Team Attack Rating</h4>
@@ -129,11 +179,11 @@
         </div>
         <div class="row">
             <div class="col-md-2 col-md-offset-5 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2" id="insertFormA">
-                <br>
-                <h3><b>Add Player to Roster</b></h3>
-                <br>
+            <br>
+            <h3 id="subHeading"><b>Add Player to Roster</b></h3>
+            <br>
                 <form action="dataInsertA.php" method="post">
-                    <div class="form-group">
+                	<div class="form-group">
                         <input class="form-control" name="name" id="inputName" placeholder="Name" required>
                     </div>
                     <div class="form-group">
@@ -149,24 +199,25 @@
                         <input class="form-control" name="image" id="inputImg" placeholder="Image URL" required>
                     </div>
                     <div class="form-group">
-                        <select class='form-control' name="table">
-                            <option value="nycfc">New York City FC</option>
-                            <option value="nyrb">New York Red Bull</option>
-                        </select>
-                    </div>
+                		<select class='form-control' name="table">
+                			<option value="nycfc">New York City FC</option>
+                			<option value="nyrb">New York Red Bull</option>
+                		</select>
+                	</div>	
+
                     <div class="form-group">
                         <select class='form-control' name="position">
-                            <option value="Striker">Striker</option>
-                            <option value="Left Winger">Left Winger</option>
-                            <option value="Right Winger">Right Winger</option>
-                            <option value="Central Attacking Midfielder">CAM</option>
-                            <option value="Central Midfielder">Central Midfielder</option>
-                            <option value="Left Midfielder">Left Midfielder</option>
-                            <option value="Right Midfielder">Right Midfielder</option>
-                            <option value="Left Back">Left Back</option>
-                            <option value="Right Back">Right Back</option>
-                            <option value="Center Back">Center Back</option>
-                            <option value="Goal Keeper">Goal Keeper</option>
+                        	<option value="Striker">Striker</option>
+                        	<option value="Left Winger">Left Winger</option>
+                        	<option value="Right Winger">Right Winger</option>
+                        	<option value="Central Attacking Midfielder">CAM</option>
+                        	<option value="Central Midfielder">Central Midfielder</option>
+                        	<option value="Left Midfielder">Left Midfielder</option>
+                        	<option value="Right Midfielder">Right Midfielder</option>
+  							<option value="Left Back">Left Back</option>
+  							<option value="Right Back">Right Back</option>
+  							<option value="Center Back">Center Back</option>
+  							<option value="Goal Keeper">Goal Keeper</option>
                         </select>
                     </div>
                     <button type="submit" value="Submit" class="btn btn-customD">SUBMIT</button>
@@ -180,37 +231,39 @@
         </div>
     </div>
     <script>
-    if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
+
+        
+        if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
-    } else {
-        // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("selectAppend").innerHTML = this.responseText;
-        }
-    };
+        } else {
+                // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("selectAppend").innerHTML = this.responseText;
+            }
+        };
+        
+        xmlhttp.open("GET", "initial.php");
+        xmlhttp.send();
 
-    xmlhttp.open("GET", "initial.php");
-    xmlhttp.send();
-
-    if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
+        if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
-    } else {
-        // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("selectAppendB").innerHTML = this.responseText;
-        }
-    };
-
-    xmlhttp.open("GET", "initial2.php");
-    xmlhttp.send();
+        } else {
+                // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("selectAppendB").innerHTML = this.responseText;
+            }
+        };
+        
+        xmlhttp.open("GET", "initial2.php");
+        xmlhttp.send();
 
     var attRatingA = 0;
     var defRatingA = 0;
@@ -252,7 +305,7 @@
         }
 
         if (counterA == 0 && counterB == 0) {
-            $('#calcBtn').attr('disabled', false);
+        	$('#calcBtn').attr('disabled', false);
 
         }
 
@@ -287,7 +340,7 @@
         }
 
         if (counterA == 0 && counterB == 0) {
-            $('#calcBtn').attr('disabled', false);
+        	$('#calcBtn').attr('disabled', false);
 
         }
 
@@ -300,10 +353,7 @@
 
         if (counterA == 0 && counterB == 0) {
 
-            $('#calcBtn').attr({
-                "data-toggle": "modal",
-                "data-target": "#myModal"
-            });
+            $('#calcBtn').attr({"data-toggle": "modal", "data-target": "#myModal"});
 
             calc();
         }
