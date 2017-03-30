@@ -38,6 +38,10 @@ a {
 	color: #012868;
 }
 
+#resA, #resB, #nycfcRes, #nyrbRes, #modalHeader {
+	color: #000000;
+}
+
 #nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #calcRowAlert, #resultA, #resultB, #insertFormA, #bottomHeading {
 	text-align: center;
 }
