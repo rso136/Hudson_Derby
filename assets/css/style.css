@@ -29,10 +29,6 @@ body {
 	margin-bottom: 0;
 }
 
-#resA, #nycfcRes, #resB, #nyrbRes, #modalHeading {
-	color: #000000;
-}
-
 #bannerHeading {
 	margin-top: 15vh;
 	font-family: 'Revalia', cursive;
@@ -42,7 +38,7 @@ a {
 	color: #012868;
 }
 
-#nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #calcRowAlert, #resultA, #resultB, #insertFormA {
+#nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #calcRowAlert, #resultA, #resultB, #insertFormA, #bottomHeading {
 	text-align: center;
 }
 
@@ -227,6 +223,10 @@ and (max-device-width : 1024px) {
 
 	#bannerHeading {
 	margin-top: 0;
+	}
+
+	#nycfcHeading, #nyrbHeading {
+		font-size: 2em;
 	}
 
 }
