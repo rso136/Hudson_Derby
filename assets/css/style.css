@@ -34,6 +34,10 @@ body {
 	font-family: 'Revalia', cursive;
 }
 
+#myModal .close {
+	color: #fff;
+}
+
 #myModal .modal-header {
 	background-color: #000000;
 	border-bottom: transparent;
