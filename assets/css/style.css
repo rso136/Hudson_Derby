@@ -29,8 +29,8 @@ body {
 	margin-bottom: 0;
 }
 
-#myModal {
-	background-color: #e25e12;
+#resA, #nycfcRes, #resB, #nyrbRes {
+	color: #000000;
 }
 
 #bannerHeading {
