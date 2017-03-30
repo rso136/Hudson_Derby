@@ -34,19 +34,27 @@ body {
 	font-family: 'Revalia', cursive;
 }
 
-a {
-	color: #012868;
+#myModal .modal-header {
+	background-color: #000000;
 }
 
-#resA, #resB, #nycfcRes, #nyrbRes, #modalHeader {
-	color: #000000;
+#myModal .modal-body {
+	background-color: #1c3272;
+}
+
+#myModal .modal-footer {
+	background-color: #000000;
+}
+
+a {
+	color: #012868;
 }
 
 #nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #calcRowAlert, #resultA, #resultB, #insertFormA, #bottomHeading {
 	text-align: center;
 }
 
-#modalHeader, #nycfcHeading, #nyrbHeading, #nycfcSubHeading, #nyrbSubHeading, #subHeading {
+#nycfcHeading, #nyrbHeading, #nycfcSubHeading, #nyrbSubHeading, #subHeading {
 	font-family: 'Roboto Slab', serif;
 }
 
@@ -149,24 +157,24 @@ a {
 }
 
 .btn-customD {
-	background-color: #000000;
+	background-color: #e50d2a;
 	color: #fff;
 	border-radius: 0;
 	margin-bottom: 5vh;
 }
 
 .btn-customD:hover {
-	background-color: #000000;
+	background-color: #e50d2a;
 	color: #fff;
 }
 
 .btn-customD:visited {
-	background-color: #000000;
+	background-color: #e50d2a;
 	color: #fff;	
 }
 
 .btn-customD:active {
-	background-color: #000000;
+	background-color: #e50d2a;
 	color: #fff;	
 }
 
