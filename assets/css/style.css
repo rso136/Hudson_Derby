@@ -7,6 +7,7 @@ body {
   min-height: 100%;
   padding-bottom: 8rem;
   font-family: 'Open Sans', sans-serif;
+  color: #fff;
 }
 
 /*.container-fluid {
@@ -22,12 +23,19 @@ body {
     -o-background-size: 100% 100%;
     text-align: center;
     color: #FFF; // change text color
-  
+}
+
+.jumbotron {
+	margin-bottom: 0;
 }
 
 #bannerHeading {
 	margin-top: 15vh;
 	font-family: 'Revalia', cursive;
+}
+
+a {
+	color: #012868;
 }
 
 #nycfcSection, #nyrbSection, #nycfcStat, #nyrbStat, #nycfcLine, #nyrbLine, #calcRow, #calcRowAlert, #resultA, #resultB, #insertFormA {
@@ -36,6 +44,37 @@ body {
 
 #nycfcHeading, #nyrbHeading, #nycfcSubHeading, #nyrbSubHeading, #subHeading {
 	font-family: 'Roboto Slab', serif;
+}
+
+.topSection {
+	background-color: #e25e12;
+}
+
+#midSection {
+	background-color: #1c3272;
+	margin-bottom: 2vh;
+	padding: 4vh 0 4vh 0;
+}
+
+.bottomSection {
+	background-color: #fff;
+	color: #000000;
+}
+
+#nycfcSection, #nyrbSection {
+	padding-top: 4vh;
+}
+
+#nycfcStat, #nyrbStat {
+	padding-bottom: 4vh;
+}
+
+.black {
+	color: #000000;
+}
+
+#calcRow {
+	padding-top: 4vh;
 }
 
 #calcRowAlert {
@@ -128,14 +167,14 @@ body {
 }
 
 #placeHolderImgA, #placeHolderImgB {
-	margin: 5vh 0 5vh 0;
-}
-
-#positionA, #positionB {
-	text-transform: uppercase;
+	margin: 5.8vh 0 5.8vh 0;
 }
 
 #mobileHR {
+	display: none;
+}
+
+#hiddenText {
 	visibility: hidden;
 }
 
@@ -170,10 +209,6 @@ body {
 
 	.btn-customB {
 		margin-bottom: 2.5vh;
-	}
-
-	#mobileHR {
-		visibility: visible;
 	}
 
 }
