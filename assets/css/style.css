@@ -29,6 +29,10 @@ body {
 	margin-bottom: 0;
 }
 
+#myModal {
+	background-color: #e25e12;
+}
+
 #bannerHeading {
 	margin-top: 15vh;
 	font-family: 'Revalia', cursive;
