@@ -46,7 +46,7 @@ a {
 	text-align: center;
 }
 
-#nycfcHeading, #nyrbHeading, #nycfcSubHeading, #nyrbSubHeading, #subHeading {
+#modalHeader, #nycfcHeading, #nyrbHeading, #nycfcSubHeading, #nyrbSubHeading, #subHeading {
 	font-family: 'Roboto Slab', serif;
 }
 
