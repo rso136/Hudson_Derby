@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM nyrb";
+$sql = "SELECT * FROM nyrb ORDER BY name";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
